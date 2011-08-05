@@ -1,6 +1,6 @@
 #PHP-MVC-Fartz
 
-This project is a bare bones PHP implementation of the MVC pattern extracted from my abandoned Aimelire website project.
+This project is a bare bones PHP implementation of the MVC pattern extracted from my abandoned [Aimelire](http://delahousse.ca/aimelire/) website project.
 
 Your files will be housed in the application folder. Those folder contain example files with instructions in them. 
 
