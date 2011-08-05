@@ -1,0 +1,251 @@
+/* USER STYLES */
+
+
+/*================================*/ 
+/*==  GENERAL TYPOGRAPHY STUFF  ==*/
+/*===============================*/ 
+
+ol,li {margin-bottom: 1.5em;}
+li{margin-bottom:.75em;}
+#footer-content .message {font-style: italic; display: block;}
+
+
+/*=====================*/ 
+/*==  Rule of THUMB  ==*/
+/*=====================*/ 
+/*
+ * Padding top for parents/wrappers.
+ * Padding bottom for content elements (paragraphs, images, etc.) -- ie. Children
+ * Padding sides: 1em, meaning a 2em gutter
+ * Padding bottom: 1.5em fro structural elements to avoid margin collaspe
+ * MARGIN bottom for content elements 
+ */
+
+
+/*== ========== ==*/
+/*== STRUCTURAL ==*/
+/*== ========== ==*/
+
+html {height: 100%;
+	background: #fff;
+}
+body {
+	min-height: 100%;/*min height because in IE, content just spills out over "height: 100%". xxx CD*/ 
+	position: relative; /*For footer bottom sticky*/ 
+}
+#header-and-content { /*REMOVE THIS DIV IF FULL WIDTH FOOTER NOT NEEDED*/ 
+	/*min-width: 28em; max-width: 56em;  [>xxxx<] */
+	padding-top: 2em;
+	width: 48em;
+	margin: 0 auto;	
+}
+header{
+	padding: 0 13em 0 0; /* 12em + 1em (Margin)*/
+	text-align: right;
+}
+header h1, header h2 {
+	padding: 0;
+	margin: 0;
+	display: inline;
+}
+
+#sidebar {
+	float: right;
+	width: 10em;  /* +1em = 12em*/ 
+	padding: 1.5em 1em 0;  /*Like #content*/ 
+}
+nav {
+	padding-bottom:1.5em;  /*Is 1.5em right for vertical rhythm?*/ 
+}
+#content {
+	/*width: 75%;*/
+	width: 34em;
+	padding: 1.5em 1em; /* x2= 2 em -- Total width = 36em*/
+	padding-bottom: 80px; /*For footer bottom sticky*/
+}
+
+footer { /*REMOVE STICKINESS WHEN WE HAVE ENOUGH CONTENT*/ 
+	width: 100%;
+	padding: 1em 0;
+	clear:both;
+	/*bottom:17px; [>Add space for shadow<] */
+	bottom:0; 
+	position: absolute; /*Sticky footer*/ 
+}
+#footer-content {
+	width: 35em;  /*just a bit wider than the content and body*/ 
+	margin: 0 auto;
+	padding: 0 13em 0 0 ;
+}
+
+/*== =============================*/
+/*== Aside CSS MAGIC and Effect ==*/
+/*== =============================*/
+
+/* Hide only visually, but have it available for screenreaders 
+   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden  */
+
+.aside-wrapper{
+	width:12em; /*why is this 14em... It should be 12! */
+	right: -14em; /*2em added for adjustment, negative padding not allowed*/
+	top: 4.225em;  /* XXX TODO LINE THIS UP WITH BASELINE*/ 
+	position: absolute;
+	height: 0;
+	float: right;
+	overflow: visible;
+	z-index: 99;
+}
+
+aside * {
+	position: absolute !important;   
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+aside h5, aside:hover * {
+	position: relative !important;    
+	clip: auto;
+}
+aside:hover ~ aside{ /*prevents usability issues. Forced the mouse to go back up*/
+	display:none;
+}
+
+/*== ================================================ ==*/
+/*== HEADER Colours, fonts, line spacing and the like ==*/
+/*== ================================================ ==*/
+#content section {
+	position: relative; /*for aside*/
+}
+header h2, header h1 {
+	font-size: 1.6em;
+	line-height: 1;
+	font-family: MuseoSans500,"Helvetica Neue",  Helvetica, Arial, 'sans-serif';
+
+}
+
+header h2 {color:#6c76cF; text-transform:uppercase;}
+
+#header-title a {color:#6c76cF;}
+
+header a, header a:active, header a:visited {
+	text-decoration:none;
+	color:#aaa;
+}
+
+header a:hover { color: #BBB; }
+
+nav a,nav a:active,nav a:visited {
+	color: #aaa; 
+	text-decoration: none;
+	font-size: 1.4em;
+	font-family: MuseoSans500,"Helvetica Neue",  Helvetica, Arial, 'sans-serif';
+	text-transform: lowercase;
+
+	line-height: 1;  /*So that the nav bar lines up with the content*/
+	padding-bottom: .2em;
+	display: block;
+}
+nav a:hover { color: #6c76cF; }
+
+#about-site h3{
+	font-size: 1em;
+	line-height: 1.2;
+	text-transform:lowercase;	
+}
+
+aside h5, #about-site h3 {
+	color: #5b65bF;
+	font-family: MuseoSans500,"Helvetica Neue",  Helvetica, Arial, 'sans-serif';
+}
+.aside-wrapper p, #about-site p,
+.aside-wrapper ol, #about-site ol,
+.aside-wrapper ul, #about-site ul {
+	color: #888;
+	font-size: .9em;
+	line-height: 1.3;
+}
+
+
+/*======================*/
+/*== CONTENT-STYLING ==*/
+/*====================*/
+
+
+/*= Content-Header Styling =*/
+
+#content-header {
+	overflow: hidden;
+	background-color: #eee;
+	 /*The following allows the content (image/text) to stay in line with grid 
+	  * but allows adds this  "image border/container". The body text is
+	  *	pushed down by 1.5em as per the rule of thumb*/ 
+	margin: -.5em -.5em 1.5em;
+	padding: .5em;
+	line-height: 1;
+}
+
+#person-image {
+	max-width:100%; /*Fluid images*/ 
+	padding-bottom: .5em;
+}
+
+#content-header h2, #content-header h3 {
+	float: left;
+	clear: both;
+}
+#content-header time, #content-header .links {
+	float: right;
+	clear: right;
+} 
+#content-header h2{
+	font-size: 1.225em;
+	font-family: MuseoSans500,"Helvetica Neue",  Helvetica, Arial, 'sans-serif';
+	text-shadow: #5b65bF 1px 1px 1px;
+	padding-bottom: .2em;
+}
+
+#content-header h3,#content-header time{
+	color: #555;
+}
+
+/*= Main content-styling =*/
+
+.question {margin-bottom: 1.5em;}
+
+.question h4 {  /*Questions*/ 
+	font-size: 1.1em;
+	color: #666;
+	font-family: MuseoSans500,"Helvetica Neue",  Helvetica, Arial, 'sans-serif';
+	margin: -.3em 0  0	 -2.7em;
+	padding: .3em 0 .2em  2.7em; /*Padding on bottom*/ 
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOFJREFUeNpiYBhugJEEtf5AbIAm9gCINwDxR2o4xh6I7wPxfzy4H4j5KbEknoAFyPg8uZbJA/F7EiwC4XpyLJqPxaD5SK7OxyL/nhyL0H2zH4ua/Vgs08dmGBOeYBNAE9uARd0BLGIC2AxkwWGRABZDsBkagEXsArXz4HwcKY9qAJQY1uNIdfbUtOQ8DkviqembeiwW3MeV0igB76lVGhAqKWgWJ+iFK7pFRAMWEtSCqoSGYVVJ8qOVbfG0sghbaS1PrGYmEiwSILYApXaqI6lcYyTDMgcoewK1GiVDEwAEGADxNG/SOotdzAAAAABJRU5ErkJggg==') no-repeat left center;  /*xxx CD TODO CHANGE TO ARROW*/ 
+}
+
+
+
+/*=============================*/
+/*===== FOOTER STYLING =======*/
+/*===========================*/
+
+footer {
+	background-color: #ddd;
+	border-top: 2px solid #888;
+	/*-moz-box-shadow: inset 0 6px 5px #bbb;*/
+	/*-webkit-box-shadow: 0 6px 5px #bbb;*/
+	/*box-shadow: 0 6px 5px #bbb; */
+}
+
+
+
+/* TODO --	 Add arrow bullets to aside. Maybe a star
+ 			Make CSS transitions for ASIDE*/ 
+
+
+/*DEV STUFF*/
+aside del {display: none;}
+/*aside {display:none;}*/
+.caption {display: none;}
+/*img {display: none;}*/
+/*p,h2,h3{border: 1px solid black;}*/
+/*body,header,aside,#content,section,nav,#masthead,#sidebar,#about-site{border: 1px solid black;}*/
+/*#footer-content{ border: 1px solid black; }*/
+
