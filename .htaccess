@@ -8,7 +8,7 @@
 # XXX WORKING
 
 #prepend directory to URL rewrite
-RewriteBase /PHP-MVC-Lite/
+RewriteBase /PHP-MVC-Fartz/
 #If not a file or existing directory ## XXX SET UP SO THAT ONLY INDEX.PHP is 
 #the only accessible file
 RewriteCond %{REQUEST_FILENAME} !-f

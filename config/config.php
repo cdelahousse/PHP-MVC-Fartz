@@ -3,7 +3,7 @@
 define("SITE_URL", "http://localhost");
  
 //leave as '/' if it is in the root of the domain.
-define ('SITE_ROOT_FOLDER', 'PHP-MVC-Lite');
+define ('SITE_ROOT_FOLDER', 'PHP-MVC-Fartz');
 
 //Define our basepath: where the framework's root and index.php will reside vis 
 //a vis the server
@@ -41,4 +41,4 @@ if (DEV_MODE == TRUE) {
 }
 
 //Add application global constants here!
-define (MY_GLOBAL_VAR, 'SOME DATA');
+define('MY_GLOBAL_VAR', 'SOME DATA');
