@@ -3,7 +3,7 @@
 define("SITE_URL", "http://localhost");
  
 //leave as '/' if it is in the root of the domain.
-define ('SITE_ROOT_FOLDER', 'ReadthisCMS');
+define ('SITE_ROOT_FOLDER', 'PHP-MVC-Lite');
 
 //Define our basepath: where the framework's root and index.php will reside vis 
 //a vis the server
@@ -21,11 +21,11 @@ define('DEFAULT_CONTROLLER_NAME', 'default');
 //SERVER information
 define('DB_TYPE', 'mysql');
 
-define('DB_HOST', 'localhost');
+define('DB_HOST', '');
 
-define('DB_NAME', 'readsthis');
+define('DB_NAME', '');
 
-define('DB_USER', 'root');
+define('DB_USER', '');
 
 define('DB_PASS', '');
 
@@ -40,5 +40,5 @@ if (DEV_MODE == TRUE) {
 	error_reporting(0);
 }
 
-//APPLICATION variables
-define('PASS', 'darntootin');
+//Add application global constants here!
+define (MY_GLOBAL_VAR, 'SOME DATA');
